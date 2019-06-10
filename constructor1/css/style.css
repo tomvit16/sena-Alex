@@ -254,6 +254,7 @@ div.constructor__style li a.active, div.constructor__style li a:hover {
 .canvas__img {
     display: flex;
     justify-content: center;
+    margin-top: 5px;
     
 }
 
@@ -266,3 +267,145 @@ div.constructor__style li a.active, div.constructor__style li a:hover {
     border: 2px solid #EA6C18;
     
 }
+
+
+
+/*constructor__cotout_type */
+
+.constructor__type__color {
+    display: none;
+}
+
+
+div.constructor__cotout__type p {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    margin-inline-start: 65px;
+    margin-top: 28px;
+}
+
+.constructor__cotout__type__ul {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    max-width: 540px;
+    border-bottom: 1px solid #000;
+}
+
+div.constructor__cotout__type li a {
+     display:block;
+    
+    text-decoration: none; 
+   color: #000;    
+}
+
+div.constructor__cotout__type li img:hover {
+   
+         padding-bottom: 10px;
+   border-bottom: 5px solid #2F2F2F;
+}
+
+
+.constructor__cotout__type__ul img.active {
+    opacity: 1;
+    padding-bottom: 10px;
+   border-bottom: 5px solid #2F2F2F;
+}
+.constructor__cotout__type__ul img {
+padding:12px 20px;
+}
+
+
+
+
+
+/*иконки*/
+.icon__round {
+    opacity: 0.7;
+    transition: all .1s; 
+}
+
+.icon__round:hover {
+    opacity: 1;
+}
+
+.icon__v-shaped {
+    opacity: 0.7;
+    transition: all .1s;
+}
+
+.icon__v-shaped:hover {
+    opacity: 1;
+}
+
+
+
+
+/*constructor__color
+*/
+
+
+.constructor__color {  /* временный */
+    margin-top: 125px;
+}
+
+
+
+div.constructor__color p {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    margin-inline-start: 65px;
+    margin-top: 38px;
+}
+
+.constructor__color__ul {
+    
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    padding: 0;
+    max-width: 540px;
+    flex-wrap: wrap;
+    max-height: 72px;
+}
+
+
+.constructor__color__logo {
+    z-index: 10;
+    border-radius: 15px; 
+  
+}
+
+.constructor__color__logo:hover {
+    z-index: 10;
+    border-radius: 15px; 
+  border: 2px solid #EA6C18;
+     
+}
+
+.constructor__color__ul li {
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.constructor__color__ul_li_11-20 {
+    position: absolute;
+    margin-top: 35px;
+    
+}
+
+
+.constructor__next__a__stage__2 {
+    margin-top: 35px;
+}
+
+
+.constructor__sex__style {
+/*    display: none;*/
+    
+}
+
