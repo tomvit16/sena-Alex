@@ -347,7 +347,7 @@ padding:12px 20px;
 */
 
 
-.constructor__color {  /* временный */
+.constructor__color {  
     margin-top: 125px;
 }
 
@@ -404,8 +404,157 @@ div.constructor__color p {
 }
 
 
-.constructor__sex__style {
-/*    display: none;*/
+
+
+
+/*constructor__image__application*/
+
+
+
+div.constructor__image p {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    margin-inline-start: 65px;
+    margin-top: 28px;
+}
+
+.constructor__image__ul {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    max-width: 540px;
+    border-bottom: 1px solid #000;
+}
+
+div.constructor__image li a {
+     display:block;
+    
+    text-decoration: none; 
+   color: #000;    
+}
+
+
+
+.constructor__image__ul img.active {
+    opacity: 1;
+    padding-bottom: 10px;
+   border-bottom: 5px solid #2F2F2F;
+}
+
+.constructor__image__ul img {
+    height: 85px;
+    width: 90px;
+padding:12px 20px;
+}
+
+
+
+
+/*иконки*/
+
+.icon__upload {
+
+    opacity: 0.7;
+    transition: all .1s; 
+}
+
+.icon__upload:hover {
+     border-bottom: 5px solid #2F2F2F;
+    opacity: 1;
+}
+
+.icon__instagram {
+
+    opacity: 0.7;
+    transition: all .1s;
+}
+
+.icon__instagram:hover {
+     border-bottom: 5px solid #2F2F2F;
+    opacity: 1;
+}
+
+.icon__collection {
+ display:block;
+    opacity: 0.7;
+    transition: all .1s;
+    
+}
+
+.icon__collection:hover {
+   border-bottom: 5px solid #2F2F2F;
+    opacity: 1;
+}
+
+
+
+
+/*constructor__image_add*/
+
+.constructor__image__add {
+    margin-top: 100px;
+}
+
+
+/*constructor__application*/
+
+
+div.constructor__application {
+    
+    margin-top: 140px;
+    
+}
+
+div.constructor__application div.d-flex {
+    
+    padding-bottom: 48px;
+    border-bottom: 1px solid #000;
+
+}
+
+
+div.constructor__application p {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    margin-inline-start: 65px;
+    margin-top: 38px;
+}
+
+
+.constructor__application__ul {
+   
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+div.constructor__application li a {
+     display:block;
+    padding:12px 20px;
+    text-decoration: none; 
+   color: #000;    
+}
+
+div.constructor__application li a.active, div.constructor__application li a:hover {
+    font-weight: 700;
+         padding-bottom: 10px;
+   border-bottom: 5px solid #2F2F2F;
+}
+
+
+#remove__image {
+    margin-top: 10px;
+}
+
+
+
+
+.constructor__image__application {
+    display: none;
     
 }
 

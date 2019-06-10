@@ -6,7 +6,7 @@
     <title>sena</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-
+<script src="js/jquery-3.4.1.min.js"></script>
 
 
 </head>
@@ -80,7 +80,7 @@
                                         </defs>
                                     </svg>
                                 </a></li>
-                            <li><a href="#">
+                            <li class="constructor__stage__3"><a href="#">
                                     <svg class="constructor__stages__3 stage" width="77" height="58" viewBox="0 0 77 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M62.4461 11.1787H39.3376L55.1683 2.20819C55.6716 1.92269 56.3181 2.09277 56.609 2.58716L60.181 8.65949C60.4724 9.1546 61.1175 9.32427 61.6217 9.03835C62.1262 8.75255 62.299 8.11945 62.0077 7.62433L58.4357 1.552C57.5634 0.0691397 55.6243 -0.440675 54.1135 0.415399L35.1415 11.1661C35.1344 11.1702 35.1282 11.1748 35.1212 11.179H26.1642C24.4194 11.179 23 12.5721 23 14.2844V49.8944C23 51.6069 24.4194 53 26.1642 53H62.4461C64.1907 53 65.6102 51.6069 65.6102 49.8944V14.2844C65.6101 12.572 64.1907 11.1787 62.4461 11.1787ZM63.5007 49.8943C63.5007 50.4651 63.0276 50.9295 62.4461 50.9295H26.1642C25.5826 50.9295 25.1095 50.4651 25.1095 49.8943V14.2843C25.1095 13.7135 25.5826 13.2492 26.1642 13.2492H62.4461C63.0276 13.2492 63.5007 13.7135 63.5007 14.2843V49.8943Z" fill="#8B8B8B" />
                                         <path d="M70.1769 21.5836C69.9806 21.391 69.7086 21.2803 69.4312 21.2803C69.1539 21.2803 68.8818 21.391 68.6857 21.5836C68.4895 21.7761 68.3766 22.0432 68.3766 22.3154C68.3766 22.5877 68.4894 22.8547 68.6857 23.0473C68.8819 23.2397 69.154 23.3506 69.4312 23.3506C69.7086 23.3506 69.9807 23.2398 70.1769 23.0473C70.3731 22.8547 70.4859 22.5877 70.4859 22.3154C70.4859 22.0432 70.3732 21.7761 70.1769 21.5836Z" fill="#8B8B8B" />
@@ -229,25 +229,74 @@
                     
                     </div>
 
-                
-                
-                
+               
+                 <div class="constructor__image__application">
+                   
+                    <!--                    добавление изображения-->
+                    <div class="constructor__image">
+                       
+                        <p>Image</p>
+                        <div class="d-flex">
+                           <ul class="constructor__image__ul col-lg-12">
+                                <li class="constructor__image__ul__li__Upload"><a  href=""><img class="icon__upload active" src="img/icon/upload.png" data-image="Upload" alt=""></a></li>
+                                <li class="constructor__image__ul__li__Instagram"><a href="">
+                                    <img class="icon__instagram" src="img/icon/instagram.png" data-cotout-type="instagram" alt="">
+  
+                                </a></li>
+                                <li class="constructor__image__ul__li__Collection"><a href="">
+                                    <img class="icon__collection" src="img/icon/collection.png" data-cotout-type="collection" alt="">
+  
+                                </a></li>
+                                
+                                
+                            </ul>
+         
+                            
+                        </div>
+                    </div>
 
+                    <div class="constructor__image__add">
+                                <input constructor__image__add__input type="file" id="imageLoader" name="imageLoader"/>
+                            </div>
+                   <div>
+                   <button id="remove__image" type="button" class="btn btn-danger">Удалить изображение</button>
+                   </div>
+                   
+                    <!--                    Выбор метода-->
+
+                    <div class="constructor__application">
+                        <p>Application Method</p>
+                        <div class="d-flex">
+                            <ul class="constructor__application__ul col-lg-12">
+                                <li><a class="active constructor__application__serigraphie" href="">Sérigraphie</a></li>
+                                <li><a class="constructor__application__broderie" href="">Broderie</a></li>
+                                <li><a class="constructor__application__ecusson" href="">Écusson</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="container constructor__next">
+                        <div class="row">
+                            <div class="col-lg-12 constructor__next__a constructor__next__a__stage__3">
+                                <a href="#">Save <br>
+                                    and go to the cost calculation</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+               
+               
+               
+               
+               
                 </div>
                 
-                
-                
-                
-                
-                
-                
-
-
 
                 <div class="canvas col-lg-6">
                   
                    <div class="container canvas__canvas">
-                    <canvas id="canvas" width="400" height="400">
+                    <canvas id="c" width="400" height="400">
                         I canvas
                     </canvas>
                     <div class="canvas__canvas__icons">
@@ -278,13 +327,10 @@
 
 
 
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/fabric.min.js"></script>
     <script src="js/script.js"></script>
 
 </body>
