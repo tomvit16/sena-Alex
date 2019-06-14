@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Pacifico|Quicksand|VT323&display=swap');
+
 body {
     font-family: 'Roboto', sans-serif;
     
@@ -558,3 +560,134 @@ div.constructor__application li a.active, div.constructor__application li a:hove
     
 }
 
+
+
+/*constructor__text*/
+
+
+div.constructor__text p {
+ 
+    font-size: 28px;
+    line-height: 33px;
+    margin-inline-start: 65px;
+    margin-top: 28px; 
+}
+
+
+
+.input__text__constructor {
+    text-align: center;
+}
+
+
+.input__text__constructor input {
+    width: 427px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.08);
+    border: none;
+    height: 49px;
+}
+
+.input__text__constructor input:focus {
+    outline-color: #ea6c18;
+}
+
+.constructor__text__input__button {
+margin-top: 10px;
+    text-align: center;
+}
+
+.constructor__text__input__button button {
+    width: 110px;
+}
+
+.constructor__text__font {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+   }
+
+#font-family {
+    height: 43px;
+    margin-right: 5px;
+}
+
+#font-family:hover, #font-family:focus {
+   border-color: #ea6c18; 
+    outline-color: #ea6c18;
+}
+
+#font-size {
+    height: 43px;
+    width: 69px;
+     margin-right: 5px;
+}
+
+
+#font-size:hover, #font-size:focus {
+    border-color: #ea6c18;
+     outline-color: #ea6c18;
+}
+
+#font-weight-bold {
+   height: 43px;
+    width: 43px;
+ display: block;
+    font-family: Quando;
+    font-weight: bold;
+    font-size: 28px;
+  padding: 1px 1px;
+    border: 1px solid rgb(169, 169, 169);
+    text-align: center;
+     margin-right: 5px;
+   
+}
+
+#font-weight-bold:hover {
+    border-color: #ea6c18;
+}
+
+
+div.constructor__text div.constructor__text__input div.text__warning {
+    text-align: center;
+    font-size: 12px;
+    color: #f00;
+
+}
+
+
+.constructor__text__color {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+div.constructor__text__color p {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.constructor__text__color ul {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.constructor__text__color ul li {
+  margin-right: 5px;
+}
+
+.constructor__text__color ul li img:hover {
+    border-radius: 15px;
+  border: 2px solid #ea6c18;
+} 
+
+
+div.constructor__application.constructor__application__color {
+    margin: 0;
+}
+
+
+.constructor__text {
+    display: none;
+}
