@@ -1,34 +1,21 @@
 (function ($) {
     $(document).ready(function () {
 
-
-        // Создаём холст
-
-        //  canvas = document.getElementById("canvas");
-        //  context = canvas.getContext("2d");
-        //
+        
+        $('.constructor__header__a').click(function () {
+            $('.constructor__header__a.active').removeClass('active');
+            $(this).addClass('active');
+        });
+        
+        
+        
+        
         //  // Создаем объект изображения
         var img = new Image();
-        //
         //  //создаём переменную для фото майки
-        //
         var imgshirt = "./img/1.jpg";
 
-        //  // Загружаем файл изображения
-        //  img.src = imgshirt;
-        //
-        //  // Прорисовываем изображение. 
-        //
-        //  img.onload = function () {
-        //
-        //      context.drawImage(img, 0, 0, 400, 400);
-        //
-        //  };
-
-
         var canvas = new fabric.Canvas('c');
-
-        //       var canvas = new fabric.StaticCanvas ('c');
 
         fabric.Image.fromURL("img/1.jpg", function (img) {
 
@@ -43,6 +30,10 @@
             canvas.remove(canvas.getActiveObject());
         });
 
+         $('#remove__text').on('click', function () {
+            canvas.remove(canvas.getActiveObject());
+        });
+        
 
 
         //убираем у ссылок поведение по умолчанию
@@ -55,35 +46,9 @@
         //      Выбор этапов
 
         $('.constructor__stages__ul li').click(function () {
-            $('.stage path.active').css('fill', "#8B8B8B");
             $('.constructor__stages__ul li').removeClass('stage__active');
-
-
             $(this).addClass('stage__active');
-            $('.stage path.active').removeClass('active');
-
-            $("path", $(this)).addClass('active');
         });
-
-        //Закрашиваем svg при наведении
-        $('.stage').mouseenter(function () {
-            $("path", $(this)).css('fill', "#000");
-
-        });
-
-        //убираем закрашивание     
-
-        $(".stage").mouseleave(function () {
-            var actClass = $("path", $(this)).hasClass('active');
-
-            if (actClass) {
-                return
-            } else {
-
-                $("path", $(this)).css('fill', "#8B8B8B");
-            }
-        });
-
 
         //     перекидываем класс active  в constructor__sex
 
@@ -574,37 +539,40 @@
             $('.constructor__type__color').css('display', 'block');
             $('li.stage__active').removeClass('stage__active');
             $('li.constructor__stage__2').addClass('stage__active');
-            $('.stage path.active').removeClass('active');
-            $('li.constructor__stage__2 a svg path').css('fill', "#000");
             $('.constructor__title h2').text('Определите тип и цвет модели');
         });
-  //          поведение для кнопки save stage 2
-   $('.constructor__next__a__stage__2').click(function () {
+        //          поведение для кнопки save stage 2
+        $('.constructor__next__a__stage__2').click(function () {
             $('.constructor__sex__style').css('display', 'none');
             $('.constructor__type__color').css('display', 'none');
             $('.constructor__image__application').css('display', 'block');
             $('li.stage__active').removeClass('stage__active');
             $('li.constructor__stage__3').addClass('stage__active');
-            $('.stage path.active').removeClass('active');
-            $('li.constructor__stage__3 a svg g path').css('fill', "#000");
-            $('.constructor__title h2').text('');
+            $('.constructor__title h2').text('Добавьте изображение');
         });
-        
-          //          поведение для кнопки save stage 3
-   $('.constructor__next__a__stage__3').click(function () {
+
+        //          поведение для кнопки save stage 3
+        $('.constructor__next__a__stage__3').click(function () {
             $('.constructor__sex__style').css('display', 'none');
             $('.constructor__type__color').css('display', 'none');
             $('.constructor__image__application').css('display', 'none');
             $('.constructor__text').css('display', 'block');
             $('li.stage__active').removeClass('stage__active');
             $('li.constructor__stage__4').addClass('stage__active');
-            $('.stage path.active').removeClass('active');
-            $('li.constructor__stage__4 a svg g path').css('fill', "#000");
             $('.constructor__title h2').text('Добавьте текст и нанесение');
         });
-
-
-
+        
+        $('.constructor__next__a__stage__4').click(function () {
+            $('.constructor__sex__style').css('display', 'none');
+            $('.constructor__type__color').css('display', 'none');
+            $('.constructor__image__application').css('display', 'none');
+            $('.constructor__text').css('display', 'none');
+            $('.constructor__size__amount').css('display', 'block');
+            
+            $('li.stage__active').removeClass('stage__active');
+            $('li.constructor__stage__5').addClass('stage__active');
+            $('.constructor__title h2').text('Выберите размер и колличество');
+        });
 
         //          поведение для кнопки round
 
@@ -1194,11 +1162,10 @@
             $('.constructor__sex__style').css('display', 'block');
             $('.constructor__type__color').css('display', 'none');
             $('.constructor__image__application').css('display', 'none');
-             $('.constructor__text').css('display', 'none');
+            $('.constructor__text').css('display', 'none');
+            $('.constructor__size__amount').css('display', 'none');
             $('li.stage__active').removeClass('stage__active');
-            $('li.constructor__stage__1').addClass('stage__active');
-            $('.stage path.active').removeClass('active');
-            $('path', $(this)).css('fill', "#000");
+            $('li.constructor__stage__1').addClass('stage__active'); 
             $('.constructor__title h2').text('Выберите пол и стиль');
         });
 
@@ -1209,11 +1176,10 @@
             $('.constructor__sex__style').css('display', 'none');
             $('.constructor__type__color').css('display', 'block');
             $('.constructor__image__application').css('display', 'none');
-             $('.constructor__text').css('display', 'none');
+            $('.constructor__text').css('display', 'none');
+            $('.constructor__size__amount').css('display', 'none');
             $('li.stage__active').removeClass('stage__active');
             $('li.constructor__stage__2').addClass('stage__active');
-            $('.stage path.active').removeClass('active');
-            $('li.constructor__stage__2 a svg g path').css('fill', "#000");
             $('.constructor__title h2').text('Определите тип и цвет модели');
         });
 
@@ -1223,31 +1189,37 @@
             $('.constructor__sex__style').css('display', 'none');
             $('.constructor__type__color').css('display', 'none');
             $('.constructor__image__application').css('display', 'block');
-             $('.constructor__text').css('display', 'none');
+            $('.constructor__text').css('display', 'none');
+            $('.constructor__size__amount').css('display', 'none');
             $('li.stage__active').removeClass('stage__active');
             $('li.constructor__stage__3').addClass('stage__active');
-            $('.stage path.active').removeClass('active');
-            $('li.constructor__stage__3 a svg g path').css('fill', "#000");
-            $('.constructor__title h2').text('');
+            $('.constructor__title h2').text('Добавьте изображение');
         });
-        
-        
-         $('.constructor__stage__4').click(function () {
+//stage 4
+
+        $('.constructor__stage__4').click(function () {
             $('.constructor__sex__style').css('display', 'none');
             $('.constructor__type__color').css('display', 'none');
             $('.constructor__image__application').css('display', 'none');
             $('.constructor__text').css('display', 'block');
-             
+$('.constructor__size__amount').css('display', 'none');
             $('li.stage__active').removeClass('stage__active');
             $('li.constructor__stage__4').addClass('stage__active');
-            $('.stage path.active').removeClass('active');
-            $('li.constructor__stage__4 a svg g path').css('fill', "#000");
             $('.constructor__title h2').text('Добавьте текст и нанесение');
         });
         
+//        stage 5
         
-        
-
+         $('.constructor__stage__5').click(function () {
+            $('.constructor__sex__style').css('display', 'none');
+            $('.constructor__type__color').css('display', 'none');
+            $('.constructor__image__application').css('display', 'none');
+            $('.constructor__text').css('display', 'none');
+            $('.constructor__size__amount').css('display', 'block');
+            $('li.stage__active').removeClass('stage__active');
+            $('li.constructor__stage__5').addClass('stage__active');
+            $('.constructor__title h2').text('Выберите размер и количество');
+        });
 
 
         //          добавлялка фото
@@ -1297,36 +1269,36 @@
         var fonts = ["Pacifico", "VT323", "Quicksand", "Inconsolata"];
 
         var textTextbox = ''; //тут будет хранится текст для отображения на холсте
-          
+
         var input__txt__constc = document.getElementById("input__text__constructor"); //тут хранится наш инпут           
-               input__txt__constc.oninput = function () { //отслеживаем событие на любое изменение в символах      
-                   $('#input__text__constructor').css('border', "none");
-                 $('.text__warning').html('');
-                  textTextbox =  input__txt__constc.value; //и записываем новое значение из инпута.
-                    var object = canvas.getActiveObject();  //сюда записываем активный объект
-                   if (object != undefined) {    //проверяем есть ли активный объект
-            object.set({ //в этот объект записываем новое значение
-                text: textTextbox    //для свойства text ы записываем то, что сейчас находится в input
-            });
-         
-                   canvas.renderAll(); //рендерим всё это дело.
-                   }
+        input__txt__constc.oninput = function () { //отслеживаем событие на любое изменение в символах      
+            $('#input__text__constructor').css('border', "none");
+            $('.text__warning').html('');
+            textTextbox = input__txt__constc.value; //и записываем новое значение из инпута.
+            var object = canvas.getActiveObject(); //сюда записываем активный объект
+            if (object != undefined) { //проверяем есть ли активный объект
+                object.set({ //в этот объект записываем новое значение
+                    text: textTextbox //для свойства text ы записываем то, что сейчас находится в input
+                });
+
+                canvas.renderAll(); //рендерим всё это дело.
+            }
         };
-        
+
         $('#add_text').click(function () {
-     $('#input__text__constructor').css('border', "none");
-                 $('.text__warning').html('');
-                  var textbox = new fabric.Textbox(textTextbox, {
-            left: 50,
-            top: 50,
-            width: 150,
-            fontSize: 20
+            $('#input__text__constructor').css('border', "none");
+            $('.text__warning').html('');
+            var textbox = new fabric.Textbox(textTextbox, {
+                left: 50,
+                top: 50,
+                width: 150,
+                fontSize: 20
+            });
+
+            canvas.add(textbox).setActiveObject(textbox);
         });
 
-        canvas.add(textbox).setActiveObject(textbox);
-        });
-        
-  
+
         fonts.unshift('Times New Roman');
 
         var select = document.getElementById("font-family");
@@ -1338,21 +1310,21 @@
         });
 
         document.getElementById("font-family").onchange = function () {
-            
+
             var object = canvas.getActiveObject();
-             if(object !== undefined) {
-            
-            if (this.value !== 'Times New Roman') {
-                loadAndUse(this.value);
+            if (object !== undefined) {
+
+                if (this.value !== 'Times New Roman') {
+                    loadAndUse(this.value);
+                } else {
+                    canvas.getActiveObject().set("fontFamily", this.value);
+                    canvas.requestRenderAll();
+                }
             } else {
-                canvas.getActiveObject().set("fontFamily", this.value);
-                canvas.requestRenderAll();
+                $('#input__text__constructor').css('border', "2px solid #f00");
+                $('.text__warning').html('<p>Add text on the shirt</p>');
             }
-                 } else {
-                 $('#input__text__constructor').css('border', "2px solid #f00");
-                 $('.text__warning').html('<p>Add text on the shirt</p>');
-             }
-        }; 
+        };
 
 
 
@@ -1376,27 +1348,27 @@
         var fwb = false;
 
         $('#font-weight-bold').click(function () {
-            
-              var object = canvas.getActiveObject();
-             if(object !== undefined) {
-            
-            if (fwb == false) {
-                fwb = true;    
-                canvas.getActiveObject().set("fontWeight", 'bold');
-                canvas.requestRenderAll();
+
+            var object = canvas.getActiveObject();
+            if (object !== undefined) {
+
+                if (fwb == false) {
+                    fwb = true;
+                    canvas.getActiveObject().set("fontWeight", 'bold');
+                    canvas.requestRenderAll();
+                } else {
+                    fwb = false;
+                    canvas.getActiveObject().set("fontWeight", 'normal');
+                    canvas.requestRenderAll();
+                }
             } else {
-                fwb = false;
-                canvas.getActiveObject().set("fontWeight", 'normal');
-                canvas.requestRenderAll();
+                $('#input__text__constructor').css('border', "2px solid #f00");
+                $('.text__warning').html('<p>Add text on the shirt</p>');
             }
-            } else {
-                 $('#input__text__constructor').css('border', "2px solid #f00");
-                 $('.text__warning').html('<p>Add text on the shirt</p>');
-             }
         });
 
-//изменяем размер шрифта
-        
+        //изменяем размер шрифта
+
         var font__sizes = [12, 20, 24, 32, 48];
 
         var select__font__sizes = document.getElementById("font-size");
@@ -1409,34 +1381,147 @@
         });
 
         $('#font-size').change(function () {
-              var object = canvas.getActiveObject();
-             if(object !== undefined) {
-            if (this.value !== 20) {
-                canvas.getActiveObject().set("fontSize", this.value);
-                canvas.requestRenderAll();
+            var object = canvas.getActiveObject();
+            if (object !== undefined) {
+                if (this.value !== 20) {
+                    canvas.getActiveObject().set("fontSize", this.value);
+                    canvas.requestRenderAll();
+                }
+            } else {
+                $('#input__text__constructor').css('border', "2px solid #f00");
+                $('.text__warning').html('<p>Add text on the shirt</p>');
             }
-             } else {
-                 $('#input__text__constructor').css('border', "2px solid #f00");
-                 $('.text__warning').html('<p>Add text on the shirt</p>');
-             }
         });
 
-//изменение цвета текста
-        $('.text__color').click( function () {
-              var object = canvas.getActiveObject();
-             if(object !== undefined) {
-                 var textName = $(this).attr('name');
-             canvas.getActiveObject().set("fill", textName);
+        //изменение цвета текста
+        $('.text__color').click(function () {
+            var object = canvas.getActiveObject();
+            if (object !== undefined) {
+                var textName = $(this).attr('name');
+                canvas.getActiveObject().set("fill", textName);
                 canvas.requestRenderAll();
-             } else {
-                 $('#input__text__constructor').css('border', "2px solid #f00");
-                 $('.text__warning').html('<p>Add text on the shirt</p>');
-             }
+            } else {
+                $('#input__text__constructor').css('border', "2px solid #f00");
+                $('.text__warning').html('<p>Add text on the shirt</p>');
+            }
         });
+
+
+        //        управление кнопками выбора размера
+
+      var valSize = [];  
+$('.constructor__size__ul li span').click(function () {
+
+            var valClass = $(this).attr('class');
+            var valProp = $(this).text();
+
+
+            if (valClass == 'active') {
+                $(this).removeClass('active');
+                if (valProp == 'XL') {
+                    $('.amount__xl').attr('disabled', "");
+                }
+                if (valProp == 'S') {
+                    $('.amount__s').attr('disabled', "");
+                }
+                if (valProp == 'M') {
+                    $('.amount__m').attr('disabled', "");
+                }
+                if (valProp == 'L') {
+                    $('.amount__l').attr('disabled', "");
+                }
+                if (valProp == 'XXL') {
+                    $('.amount__xxl').attr('disabled', "");
+                }
+            } else {
+                $(this).addClass('active');
+
+                if (valProp == 'XL') {
+                    $('.amount__xl').removeAttr('disabled');
+                }
+                if (valProp == 'S') {
+                    $('.amount__s').removeAttr('disabled');
+                }
+                if (valProp == 'M') {
+                    $('.amount__m').removeAttr('disabled');
+                }
+                if (valProp == 'L') {
+                    $('.amount__l').removeAttr('disabled');
+                }
+                if (valProp == 'XXL') {
+                    $('.amount__xxl').removeAttr('disabled');
+                }
+
+            };
+
+        });
+
+
+//      всплывающие окна
+         $('#save_and_calculation').magnificPopup({
+            type: 'inline'
+        });
+
+        
+          $('#popup1').wiFeedBack({
+            fbScript: 'blocks/wi-feedback.php',
+            fbLink: '.save_and_calculation',
+            fbTheme: false
+        });
+
+        
+//        записываем готове изображеие в попап      
+  
+        var valAmount = [];
+        
+$('.save_and_calculation').click(function () { //по клику на save
+    var object = canvas.toObject();  //достаём содержимое canvas и конверитруем в объект 
+     var canvas2 = new fabric.StaticCanvas('popup__canvas'); //создаём новый canvas
+    canvas2.loadFromJSON(object); // переписываем содержимое canvas в canvas 2
+ 
+    //в это же время забераем значения для попапа и выводим их в попап
+    $('.result__sex').text(valSex);   //записываем выбранный пол
+    $('.result__style').text(valStyle); //записываем выбранный стиль
+    //перебираем выбранные размеры и записываем значение тех,, у которых класс active в массив valSize
+    $('.constructor__size__ul li span').each(function () {
+       if(this.className == 'active')  {valSize.push(this.textContent)};
+    });
+    $('.constructor__amount__ul li select').each(function() {
+        if($(this).val() > 0) { valAmount.push($(this).val()) }
+//        var q = $(this).val();
         
        
         
-       
+    });
+    
+     console.log(valAmount);
+    
+    
+    
+    
+    
+   $('.result__size').text(valSize);
+    
+    
+    
+    
+    console.log(valSize);
+    
+});
+
+
+//    скачиваем готовое изображение
+        
+        $('#download__pdf').click(function () {
+            $('#c').get(0).toBlob(function(blob) {
+                saveAs(blob, 'myIMG.png');
+            })
+        });
+
+        
+        
+        
+
 
     });
 })(jQuery);
