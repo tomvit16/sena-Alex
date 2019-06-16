@@ -191,7 +191,9 @@
                                 <ul class="constructor__image__ul col-lg-12">
                                     <li class="constructor__image__ul__li__Upload"><a href=""><img class="icon__upload active" src="img/icon/upload.png" data-image="Upload" alt=""></a></li>
                                     <li class="constructor__image__ul__li__Instagram"><a href="">
+                                           
                                             <img class="icon__instagram" src="img/icon/instagram.png" data-cotout-type="instagram" alt="">
+                                        
 
                                         </a></li>
                                     <li class="constructor__image__ul__li__Collection"><a href="">
@@ -218,6 +220,7 @@
 
                         <!--                    Выбор метода-->
 
+<!--
                         <div class="constructor__application">
                             <p>Application Method</p>
                             <div class="d-flex">
@@ -228,6 +231,7 @@
                                 </ul>
                             </div>
                         </div>
+-->
 
                         <div class="container constructor__next">
                             <div class="row">
@@ -335,6 +339,7 @@
                                             <option value="5">5</option>
                                             <option value="6">6</option>
                                             <option value="7">7</option>
+                                            <option value="7">7</option>
                                             <option value="8">8</option>
                                             <option value="9">9</option>
                                             <option value="10">10</option>
@@ -408,24 +413,18 @@
 
 
                     <div id="popup1">
-
-
                         <div class="popup1__content">
                             <div class="col_lg_6">
-                              <p>Price from: 12.99$</p>
-                              <canvas width="400" height="400" id="popup__canvas">
-                                  
-                              </canvas>
-                              
-                                <p class="result__sex"></p>
-                                <p class="result__style"></p>
-                                <p class="result__size"></p>
-                                <p class="result__amount" id="result__amount"></p>
-                                <p class="result__method"></p>
+                              <p class="price__from">Price from: 12,99 €</p>
+                              <canvas width="400" height="400" id="popup__canvas">        
+                              </canvas>                              
+                                <div class="popup1__content__result"><span>Sex: </span><p class="result__sex"></p></div>
+                                <div class="popup1__content__result"><span>Style: </span><p class="result__style"></p></div>
+                                <div class="popup1__content__result"><span>Size: </span><p class="result__amount" id="result__amount"></p></div>
+                                <div class="popup1__content__result"><span>Method: </span><p class="result__method"></p></div>
                                 
                                 <a id="download__pdf" href="">Download file pdf</a>
-                            </div>
-                            
+                            </div>                         
                             <div class="col-lg-6">
                                 <input type="text" placeholder="Name">
                                 <div class="input__e-mail"><input type="e-mail" placeholder="Email" required><span>&#9913;</span></div>
@@ -434,7 +433,6 @@
                                     <span>&#9913;</span>
                                 </div>
                                 <input type="textarea" placeholder="Comments">
-
                                 <div class="input__information__group">
                                     <input id="input__information" type="checkbox"><label for="input__information">En soumettant ce formulaire, j'accepte que les informations
                                         saisies soient exploitées dans le cadre strict de ma demande.</label>
@@ -444,45 +442,35 @@
                                 </div>
                                 <button class="input__send">Send</button>
                                 <p class="input__inforamtion">Поля отмеченные звёздочкой (<span class="input__star">&#9913;</span>) обязательны для заполнения</p>
-
-
-
                             </div>
-
-
-
                         </div>
-
-
                     </div>
-
-
                 </div>
-
-
+                
+                <div class="popup2_none"><div id="popup2">
+                    <canvas id="popup__canvas2" width="600" height="600" >
+                                  
+                              </canvas>  
+                              </div>
+                </div>
+                
                 <div class="canvas col-lg-6">
-
                     <div class="container canvas__canvas">
                         <canvas id="c" width="400" height="400">
                             I canvas
                         </canvas>
                         <div class="canvas__canvas__icons">
-                            <div> <img src="img/icon/magnifying-glass.png" alt=""></div>
+                            <div> <a class="glass" href="#popup2"><img  src="img/icon/magnifying-glass.png" alt=""></a></div>
                             <div> <img src="img/icon/left.png" alt=""></div>
                             <div> <img src="img/icon/right.png" alt=""></div>
                         </div>
-
                     </div>
                     <div class="container col-lg-6 canvas__img">
 
                         <img id="img1" class="active" height="58px" width="58px" src="img/1.jpg" alt="">
                         <img id="img2" height="58px" width="58px" src="img/2.jpg" alt="">
                         <img id="img3" height="58px" width="58px" src="img/3.jpg" alt="">
-
-
                     </div>
-
-
                 </div>
             </div>
         </div>

@@ -1,15 +1,15 @@
 (function ($) {
     $(document).ready(function () {
 
-        
+
         $('.constructor__header__a').click(function () {
             $('.constructor__header__a.active').removeClass('active');
             $(this).addClass('active');
         });
-        
-        
-        
-        
+
+
+
+
         //  // Создаем объект изображения
         var img = new Image();
         //  //создаём переменную для фото майки
@@ -30,10 +30,10 @@
             canvas.remove(canvas.getActiveObject());
         });
 
-         $('#remove__text').on('click', function () {
+        $('#remove__text').on('click', function () {
             canvas.remove(canvas.getActiveObject());
         });
-        
+
 
 
         //убираем у ссылок поведение по умолчанию
@@ -561,14 +561,14 @@
             $('li.constructor__stage__4').addClass('stage__active');
             $('.constructor__title h2').text('Добавьте текст и нанесение');
         });
-        
+
         $('.constructor__next__a__stage__4').click(function () {
             $('.constructor__sex__style').css('display', 'none');
             $('.constructor__type__color').css('display', 'none');
             $('.constructor__image__application').css('display', 'none');
             $('.constructor__text').css('display', 'none');
             $('.constructor__size__amount').css('display', 'block');
-            
+
             $('li.stage__active').removeClass('stage__active');
             $('li.constructor__stage__5').addClass('stage__active');
             $('.constructor__title h2').text('Выберите размер и колличество');
@@ -1165,7 +1165,7 @@
             $('.constructor__text').css('display', 'none');
             $('.constructor__size__amount').css('display', 'none');
             $('li.stage__active').removeClass('stage__active');
-            $('li.constructor__stage__1').addClass('stage__active'); 
+            $('li.constructor__stage__1').addClass('stage__active');
             $('.constructor__title h2').text('Выберите пол и стиль');
         });
 
@@ -1195,22 +1195,22 @@
             $('li.constructor__stage__3').addClass('stage__active');
             $('.constructor__title h2').text('Добавьте изображение');
         });
-//stage 4
+        //stage 4
 
         $('.constructor__stage__4').click(function () {
             $('.constructor__sex__style').css('display', 'none');
             $('.constructor__type__color').css('display', 'none');
             $('.constructor__image__application').css('display', 'none');
             $('.constructor__text').css('display', 'block');
-$('.constructor__size__amount').css('display', 'none');
+            $('.constructor__size__amount').css('display', 'none');
             $('li.stage__active').removeClass('stage__active');
             $('li.constructor__stage__4').addClass('stage__active');
             $('.constructor__title h2').text('Добавьте текст и нанесение');
         });
-        
-//        stage 5
-        
-         $('.constructor__stage__5').click(function () {
+
+        //        stage 5
+
+        $('.constructor__stage__5').click(function () {
             $('.constructor__sex__style').css('display', 'none');
             $('.constructor__type__color').css('display', 'none');
             $('.constructor__image__application').css('display', 'none');
@@ -1221,7 +1221,7 @@ $('.constructor__size__amount').css('display', 'none');
             $('.constructor__title h2').text('Выберите размер и количество');
         });
 
-
+        
         //          добавлялка фото
 
         var imageLoader = document.getElementById('imageLoader');
@@ -1233,12 +1233,11 @@ $('.constructor__size__amount').css('display', 'none');
                 var img = new Image();
                 img.onload = function () {
                     var imgInstance = new fabric.Image(img, {
-
-
                         left: 100,
                         scaleX: 0.5,
                         scaleY: 0.5
                     });
+   
                     canvas.add(imgInstance);
                 }
                 img.src = event.target.result;
@@ -1250,18 +1249,25 @@ $('.constructor__size__amount').css('display', 'none');
         //            image перекидываем класс active
 
 
-        $('.constructor__image__ul li a img').click(function () {
+        $('.constructor__image__ul li a img.icon__upload').click(function () {
+            $('.constructor__image__ul li a img.active').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        $('.constructor__image__ul li a img.icon__collection').click(function () {
             $('.constructor__image__ul li a img.active').removeClass('active');
             $(this).addClass('active');
         });
 
 
-
         //            Application Method перекидываем класс актив
+
+        var valMethod = "Sérigraphie";
 
         $('.constructor__application__ul li a').click(function () {
             $('.constructor__application__ul li a.active').removeClass('active');
             $(this).addClass('active');
+            valMethod = $(this).text();
         });
 
 
@@ -1409,8 +1415,8 @@ $('.constructor__size__amount').css('display', 'none');
 
         //        управление кнопками выбора размера
 
-      var valSize = [];  
-$('.constructor__size__ul li span').click(function () {
+        var valSize = [];
+        $('.constructor__size__ul li span').click(function () {
 
             var valClass = $(this).attr('class');
             var valProp = $(this).text();
@@ -1457,70 +1463,121 @@ $('.constructor__size__ul li span').click(function () {
         });
 
 
-//      всплывающие окна
-         $('#save_and_calculation').magnificPopup({
+        //        описываем выбранные количесвта по размерам
+
+        var size__l__val = 1;
+        var size__s__val = 0;
+        var size__m__val = 0;
+        var size__xl__val = 0;
+        var size__xxl__val = 0;
+
+        $('.amount__l').change(function () {
+            size__l__val = $('.amount__l').val();
+        });
+
+        $('.amount__s').change(function () {
+            size__s__val = $('.amount__s').val();
+        });
+
+        $('.amount__m').change(function () {
+            size__m__val = $('.amount__m').val();
+        });
+
+        $('.amount__xl').change(function () {
+            size__xl__val = $('.amount__xl').val();
+        });
+
+        $('.amount__xxl').change(function () {
+            size__xxl__val = $('.amount__xxl').val();
+        });
+
+   
+        $('.glass').magnificPopup({
             type: 'inline'
         });
 
-        
-          $('#popup1').wiFeedBack({
+
+        $('#popup1').wiFeedBack({
             fbScript: 'blocks/wi-feedback.php',
             fbLink: '.save_and_calculation',
             fbTheme: false
         });
 
-        
-//        записываем готове изображеие в попап      
-  
-        var valAmount = [];
-        
-$('.save_and_calculation').click(function () { //по клику на save
-    var object = canvas.toObject();  //достаём содержимое canvas и конверитруем в объект 
-     var canvas2 = new fabric.StaticCanvas('popup__canvas'); //создаём новый canvas
-    canvas2.loadFromJSON(object); // переписываем содержимое canvas в canvas 2
- 
-    //в это же время забераем значения для попапа и выводим их в попап
-    $('.result__sex').text(valSex);   //записываем выбранный пол
-    $('.result__style').text(valStyle); //записываем выбранный стиль
-    //перебираем выбранные размеры и записываем значение тех,, у которых класс active в массив valSize
-    $('.constructor__size__ul li span').each(function () {
-       if(this.className == 'active')  {valSize.push(this.textContent)};
-    });
-    $('.constructor__amount__ul li select').each(function() {
-        if($(this).val() > 0) { valAmount.push($(this).val()) }
-//        var q = $(this).val();
-        
-       
-        
-    });
-    
-     console.log(valAmount);
-    
-    
-    
-    
-    
-   $('.result__size').text(valSize);
-    
-    
-    
-    
-    console.log(valSize);
-    
-});
+
+        $('.glass').click(function () {
+            var object = canvas.toObject();
+            var canvas3 = new fabric.StaticCanvas('popup__canvas2');
+            var propObjects = object.objects;
+            
+            console.log(propObjects);
+            
+            
+           for ( i = 0; i < propObjects.length; i++) {
+         
+               object.objects[i].scaleY = (object.objects[i].scaleY * 1.5);
+               object.objects[i].scaleX = (object.objects[i].scaleX * 1.5);
+                   object.objects[i].left = (object.objects[i].left * 1.5);
+               object.objects[i].top = (object.objects[i].top * 1.5); 
+           }
+            canvas3.loadFromJSON(object);    
+            console.log(propObjects);
+        });
+
+        //        записываем готове изображеие в попап      
 
 
-//    скачиваем готовое изображение
-        
+        $('.save_and_calculation').click(function () { //по клику на save
+            var object = canvas.toObject(); //достаём содержимое canvas и конверитруем в объект 
+            var canvas2 = new fabric.StaticCanvas('popup__canvas'); //создаём новый canvas
+            canvas2.loadFromJSON(object); // переписываем содержимое canvas в canvas 2
+
+            //в это же время забераем значения для попапа и выводим их в попап
+            $('.result__sex').text(valSex); //записываем выбранный пол
+            $('.result__style').text(valStyle); //записываем выбранный стиль
+            $('.result__method').text(valMethod); //записываем выбранный метод
+
+            //проверяем что выбрано в amount  и если что-то есть, то записываем 
+
+            var resAmount = [];
+
+            if (size__s__val > 0) {
+                resAmount.push('S ' + size__s__val + " шт.");
+            }
+
+            if (size__m__val > 0) {
+                resAmount.push('M ' + size__m__val + " шт.");
+            }
+
+
+            if (size__l__val > 0) {
+                resAmount.push('L ' + size__l__val + " шт.");
+            }
+
+            if (size__xl__val > 0) {
+                resAmount.push('XL ' + size__xl__val + " шт.");
+            }
+
+            if (size__xxl__val > 0) {
+                resAmount.push('XXL ' + size__xxl__val + " шт.");
+            }
+
+            $('.result__amount').text(resAmount);
+
+
+        });
+
+
+        //    скачиваем готовое изображение
+
         $('#download__pdf').click(function () {
-            $('#c').get(0).toBlob(function(blob) {
+            $('#c').get(0).toBlob(function (blob) {
                 saveAs(blob, 'myIMG.png');
             })
         });
 
-        
-        
-        
+
+
+
 
 
     });

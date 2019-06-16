@@ -472,10 +472,44 @@ padding:12px 20px;
     transition: all .1s;
 }
 
+.constructor__image__ul__li__Instagram:hover:before {
+position: absolute;
+   margin-left: 4%;
+    font-weight: 900;
+     content: "Soon";
+
+}
+
+
+.constructor__header__basket:hover:before {
+   position: absolute;
+   
+    opacity: 1;
+    font-weight: 900;
+     content: "Soon";
+    background:#ea6c18;
+} 
+
+
+/*
+.icon__instagram:hover:after {
+display: block;
+   content: "Soon";
+}
+*/
+
+
+.icon__instagram__soon {
+display: none;
+}
+
+
+/*
 .icon__instagram:hover {
      border-bottom: 5px solid #2F2F2F;
     opacity: 1;
 }
+*/
 
 .icon__collection {
  display:block;
@@ -869,8 +903,60 @@ div.constructor__application.constructor__application__color {
     margin-top: 5px;
 }
 
+
+.price__from {
+    margin-left: 97px;
+}
+
+.result__sex {
+    margin: 0;
+}
+
+.result__style {
+    margin: 0;
+}
+
+.result__amount {
+    margin: 0;
+}
+
+.popup1__content__result {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    margin-left: 120px;
+}
+
+.popup1__content__result span {
+    font-weight: 900;
+}
+
+.popup1__content__result p {
+    margin-left: 5px;
+}
+
 #download__pdf {
     color: black;
     text-decoration-line: underline;
+    margin-left: 97px;
 }
+
+
+.popup2_none {
+    display: none;
+}
+
+#popup2 {
+       position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 640px;
+    margin: 20px auto;
+   
+}
+
+
 
